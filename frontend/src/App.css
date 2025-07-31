@@ -1,0 +1,480 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@tailwind utilities;
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.dark .glass-header {
+  background: rgba(17, 24, 39, 0.85);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.dark .glass-card {
+  background: rgba(31, 41, 55, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vintage-text {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.vintage-headline {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vintage-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vintage-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+}
+
+.vintage-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.vintage-link {
+  color: #6b7280;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+.vintage-link:hover {
+  color: #374151;
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+.dark .vintage-link:hover {
+  color: #d1d5db;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.vintage-button {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #374151;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.vintage-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.dark .vintage-button {
+  background: rgba(31, 41, 55, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #d1d5db;
+}
+.dark .vintage-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.vintage-button-primary {
+  background: linear-gradient(135deg, #374151, #1f2937);
+  color: white;
+  border: 2px solid #374151;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.vintage-button-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+.vintage-button-primary:hover::before {
+  left: 100%;
+}
+.vintage-button-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: #4b5563;
+}
+
+.vintage-button-secondary {
+  background: transparent;
+  color: #374151;
+  border: 2px solid #374151;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.vintage-button-secondary:hover {
+  background: #374151;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+.dark .vintage-button-secondary {
+  color: #d1d5db;
+  border-color: #d1d5db;
+}
+.dark .vintage-button-secondary:hover {
+  background: #d1d5db;
+  color: #1f2937;
+}
+
+.vintage-badge {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #374151;
+  padding: 8px 16px;
+  font-family: "Courier New", monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.vintage-badge:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+.dark .vintage-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #d1d5db;
+}
+.dark .vintage-badge:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.vintage-filter-button {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #6b7280;
+  padding: 8px 16px;
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.vintage-filter-button:hover,
+.vintage-filter-button.active {
+  background: #374151;
+  color: white;
+  border-color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.dark .vintage-filter-button {
+  background: rgba(31, 41, 55, 0.7);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #9ca3af;
+}
+.dark .vintage-filter-button:hover,
+.dark .vintage-filter-button.active {
+  background: #d1d5db;
+  color: #1f2937;
+  border-color: #d1d5db;
+}
+
+.vintage-search {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: #374151;
+  padding: 12px 12px 12px 48px;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  width: 300px;
+  transition: all 0.3s ease;
+}
+.vintage-search:focus {
+  outline: none;
+  border-color: #374151;
+  box-shadow: 0 0 0 3px rgba(55, 65, 81, 0.1);
+}
+.vintage-search::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+.dark .vintage-search {
+  background: rgba(31, 41, 55, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #d1d5db;
+}
+.dark .vintage-search:focus {
+  border-color: #d1d5db;
+  box-shadow: 0 0 0 3px rgba(209, 213, 219, 0.1);
+}
+
+.vintage-tech-badge {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #4b5563;
+  padding: 4px 8px;
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+.vintage-tech-badge:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+.dark .vintage-tech-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+}
+.dark .vintage-tech-badge:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.vintage-tag {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2px 8px;
+  font-family: "Courier New", monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+.vintage-tag:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-1px);
+}
+.dark .vintage-tag {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
+}
+.dark .vintage-tag:hover {
+  background: white;
+}
+
+.vintage-icon-button {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #6b7280;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vintage-icon-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.dark .vintage-icon-button {
+  background: rgba(31, 41, 55, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #9ca3af;
+}
+.dark .vintage-icon-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #d1d5db;
+}
+
+.vintage-demo-button:hover {
+  background: #374151 !important;
+  color: white !important;
+  border-color: #374151 !important;
+}
+.dark .vintage-demo-button:hover {
+  background: #d1d5db !important;
+  color: #1f2937 !important;
+  border-color: #d1d5db !important;
+}
+
+.vintage-contact-button {
+  background: #374151;
+  color: white;
+  border: 2px solid #374151;
+  padding: 16px 32px;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.vintage-contact-button:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.vintage-contact-button-secondary {
+  background: transparent;
+  color: #374151;
+  border: 2px solid #374151;
+  padding: 16px 32px;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.vintage-contact-button-secondary:hover {
+  background: #374151;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+.dark .vintage-contact-button-secondary {
+  color: #d1d5db;
+  border-color: #d1d5db;
+}
+.dark .vintage-contact-button-secondary:hover {
+  background: #d1d5db;
+  color: #1f2937;
+}
+
+.vintage-footer-link {
+  color: #6b7280;
+  font-family: "Courier New", monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.vintage-footer-link:hover {
+  color: #374151;
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+.dark .vintage-footer-link:hover {
+  color: #d1d5db;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
